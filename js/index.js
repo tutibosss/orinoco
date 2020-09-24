@@ -1,7 +1,11 @@
+//recuperation des donnai pour la conception de la page
+
 let idElementSelect;
 
 const creePageIndex = function(){
     let dataMeuble = JSON.parse(localStorage.getItem('dataMeuble'));
+
+    //conception de chaque aticle dans la pages
     
     for (let i = 0; i < dataMeuble.length; i++){
 
@@ -21,11 +25,15 @@ const creePageIndex = function(){
         elmentEnCour.appendChild(document.createElement("p")).innerText = dataMeuble[i].description;
         elmentEnCour.appendChild(document.createElement("h3")).innerText = dataMeuble[i].price + "€";
 
+        //ajout de l'event qui lit le click sur larticle que lon veut en detail
+
         document.getElementById(dataMeuble[i]._id).addEventListener('click', function(){
             localStorage.setItem('articleChoisi', idElementSelect = i);
         });
     }
 }
+
+//fonction final pour que le chargement se face bien des la premier utilisation
 
 if (localStorage.getItem('dataMeuble') === null){
     const premierUtilisation = async function(){

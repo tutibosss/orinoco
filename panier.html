@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang fr>
+<html lang = "fr">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./style.css">
 
-        <script src="./panier.js" defer></script>
+        <script src="./js/panier.js" defer></script>
         
         <title>orinoco</title>
     </head>
@@ -25,19 +25,19 @@
                     <label for="prenom">
                         prenom
                     </label>
-                    <input type="text" id="prenom" name="firstName" required>
+                    <input type="text" id="prenom" name="firstName" pattern="[A-Za-z]{4,}" required>
                     <label for="nom">
                         nom
                     </label>
-                    <input type="text" id="nom" name="lastName" required>
+                    <input type="text" id="nom" name="lastName" pattern="[A-Za-z]{4,}" required>
                     <label for="adress">
                         adresse
                     </label>
-                    <input type="text" id="adress" name="address" required>
+                    <input type="" id="adress" name="address" required>
                     <label for="ville">
                         ville
                     </label>
-                    <input type="text" id="ville" name="city" required>
+                    <input type="text" id="ville" name="city" pattern="[A-Za-z]{3,}" required>
                     <label for="email">
                         adresse electronique
                     </label>
