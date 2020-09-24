@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang fr>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./style.css">
+
+        <script src="./panier.js" defer></script>
+        
+        <title>orinoco</title>
+    </head>
+
+    <body>
+        <header>
+            <h1>orinoco</h1>
+        </header>
+
+        <main id="conteneur-article">
+            <section id="recap">
+                <h2>recapitulatif de la comande</h2>
+            </section>
+            <section>
+                <h2>formulaire de commande</h2>
+                <form id='myForm'>
+                    <label for="prenom">
+                        prenom
+                    </label>
+                    <input type="text" id="prenom" name="firstName" required>
+                    <label for="nom">
+                        nom
+                    </label>
+                    <input type="text" id="nom" name="lastName" required>
+                    <label for="adress">
+                        adresse
+                    </label>
+                    <input type="text" id="adress" name="address" required>
+                    <label for="ville">
+                        ville
+                    </label>
+                    <input type="text" id="ville" name="city" required>
+                    <label for="email">
+                        adresse electronique
+                    </label>
+                    <input type="email" id='email' name="email" required>
+                    <input type="submit" id='envoiForm'>
+                </form>
+
+            </section>
+        </main>
+
+    </body>
+</html>
