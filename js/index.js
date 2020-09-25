@@ -46,7 +46,6 @@ const verif = async function(){
     await getMeuble();
     let newData = localStorage.getItem('dataMeuble');
     if (ancienneData != newData){
-        console.log('ca marche')
         window.location.reload();
     }
 }
