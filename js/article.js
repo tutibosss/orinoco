@@ -74,4 +74,5 @@ document.getElementById('ajoutPanier').addEventListener('click',function(){
             localStorage.setItem('panier', AjouterPanier);
         }
     }
+    alert("votre aticle a bien etait au panier");
 })

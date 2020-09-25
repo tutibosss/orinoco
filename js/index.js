@@ -33,14 +33,29 @@ const creePageIndex = function(){
     }
 }
 
-//fonction final pour que le chargement se face bien des la premier utilisation
+//pour un chargement plus rapide d l'index creation de fonction
+//ci c'est la premier fois recupere la base de donne puis cree la page
+const chargementPagePremierFois = async function(){
+    await getMeuble();
+    creePageIndex();
+}
 
-if (localStorage.getItem('dataMeuble') === null){
-    const premierUtilisation = async function(){
-        await getMeuble();
-        creePageIndex();
+//ci ca ne les pas cree la page et verifier ci la base de donne na pas etait mise a jour, ci c'est le cas reload la page
+const verif = async function(){
+    let ancienneData = localStorage.getItem('dataMeuble');
+    await getMeuble();
+    let newData = localStorage.getItem('dataMeuble');
+    if (ancienneData != newData){
+        console.log('ca marche')
+        window.location.reload();
     }
-    premierUtilisation();
+}
+
+//pour un chargement plus rapide de lindex 
+
+if(localStorage.getItem('dataMeuble')=== null){
+    chargementPagePremierFois();
 }else{
     creePageIndex();
+    verif();
 }
