@@ -1,4 +1,4 @@
-//recuperation des donne renvoiyer par l'api
+//recuperation des donne renvoiyer par le serveur
 let dataCommande = JSON.parse(localStorage.getItem('reponsePost'));
 
 // calcule du total de la commande
