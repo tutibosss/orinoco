@@ -31,3 +31,11 @@ form{
     display: flex;
     flex-direction: column;
 }
+
+table{
+    text-align: center;
+}
+
+.droit{
+    text-align: right;
+}

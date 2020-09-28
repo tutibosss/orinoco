@@ -1,11 +1,12 @@
 //recuperation des donne renvoiyer par l'api
-let dataCommande = JSON.parse(localStorage.getItem('reponseCommande'));
+let dataCommande = JSON.parse(localStorage.getItem('reponsePost'));
 
 // calcule du total de la commande
-let totalCommande = 0
+let facture = []
 for(i=0; i<dataCommande.products.length; i++){
-    totalCommande = totalCommande + dataCommande.products[i].price;
+    facture.push(dataCommande.products[i].price);
 }
+let totalCommande = calculeFacture(facture);
 
 //affichage de l'iD et du prix de la commande
 document.getElementById('prix').innerText = totalCommande + "€";
