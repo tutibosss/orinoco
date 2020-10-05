@@ -1,6 +1,9 @@
 header{
-    width: 100%;
     text-align: center;
+}
+
+a{
+    text-decoration: none;
 }
 
 main{
@@ -12,7 +15,7 @@ main{
 
 .article{
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     height: auto;
@@ -24,7 +27,24 @@ main{
 }
 
 img{
-    width: 90%;
+    border-radius: 20px;
+    width: 60%;
+}
+
+.article h2, h3{
+    width: 100%;
+    text-align: center;
+}
+
+.article img{
+    width: 30%;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.article div{
+    width: 65%;
+    padding-left: 20px;
 }
 
 form{
@@ -34,8 +54,44 @@ form{
 
 table{
     text-align: center;
+    width: 80%;
+    margin-bottom: 20px;
 }
 
 .droit{
     text-align: right;
+}
+
+#recap{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+}
+
+.bad{
+    border-color: red;
+}
+@media screen and (max-width: 600px){
+    tbody td:nth-child(1), tbody td:nth-child(4), thead th:nth-child(1), thead th:nth-child(4){
+        display: none;
+    }
+    tfoot{
+        display: flex;
+        width: 250%;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    tfoot tr{
+        display: flex;
+    }
+    tfoot td{
+        display: flex;
+    }
+    p{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
 }

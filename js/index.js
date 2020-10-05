@@ -10,54 +10,23 @@ const creeListeArticleIndex = function(conteneur, dataListe){
         let elmentEnCour = document.getElementById(data._id);
         creeArticle(elmentEnCour, data.name, data.imageUrl, data.description, data.price);
 
-        let idElementSelect
+        let idSelect
         document.getElementById(data._id).addEventListener('click', function(){
-            localStorage.setItem('articleChoisi', idElementSelect = i);
+            localStorage.setItem('articleChoisi', idSelect = dataListe[i]._id);
         });
     }
 }
 
 //fonction de la creation de la page
 
-const creePageIndex = function(){
-    let dataMeuble = JSON.parse(localStorage.getItem('dataMeuble'));
+const creePageIndex = async function(){
+    let dataMeuble = await getMeuble()
 
     let conteneur = document.getElementById("conteneur-article");
     creeListeArticleIndex(conteneur, dataMeuble);
 }
 
-//fonction du premier chargement de la page
-const chargementPagePremierFois = async function(){
-    await getMeuble();
-    creePageIndex();
-}
+let panier = PanierQuantiter(JSON.parse(localStorage.getItem('panier')))
+document.getElementById('quantiterPanier').innerText = "("+panier+")"
 
-//fonction de verif ci la base de donne na pas etait modifier
-const verif = async function(){
-    let ancienneData = localStorage.getItem('dataMeuble');
-    await getMeuble();
-    let newData = localStorage.getItem('dataMeuble');
-    if (ancienneData != newData){
-        return true
-    }else{
-        return false
-    }
-}
-
-//Action ci la base e donne et modifier
-const verifMiseJourAction = async function(){
-    let reponse = await verif()
-    console.log(reponse)
-    if(reponse === true){
-            window.location.reload()
-    }
-}
-
-//Chargement final de la page index
-
-if(localStorage.getItem('dataMeuble')=== null){
-    chargementPagePremierFois();
-}else{
-    creePageIndex();
-    verifMiseJourAction();
-}
+creePageIndex()

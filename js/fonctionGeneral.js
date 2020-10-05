@@ -15,8 +15,9 @@ const creeLien = function(conteneur, id, page, text){
 const creeArticle = function(conteneur, titre, srcImage, description, prix){
     conteneur.appendChild(document.createElement("h2")).innerText = titre;
     conteneur.appendChild(document.createElement("img")).setAttribute("src", srcImage);
-    conteneur.appendChild(document.createElement("p")).innerText = description;
-    conteneur.appendChild(document.createElement("h3")).innerText = prix;
+    let div = conteneur.appendChild(document.createElement('div'));
+    div.appendChild(document.createElement("p")).innerText = description;
+    div.appendChild(document.createElement("h3")).innerText = prix+"€";
 }
 
 const calculeFacture = function(data){
@@ -25,4 +26,16 @@ const calculeFacture = function(data){
         total = total + data[i]
     }
     return total
+}
+
+const PanierQuantiter = function(Panier){
+    if(Panier != null){
+        let total = 0
+        for(let i=0; i<Panier.length; i++){
+           total = total + Panier[i].quantiter
+        }
+        return total
+    }else{
+        return '0'
+    }
 }

@@ -2,7 +2,18 @@
 const getMeuble = async function(){
     let reponse = await fetch ('http://localhost:3000/api/furniture')
     if (reponse.ok){
-        localStorage.setItem('dataMeuble', await reponse.text());
+        return await reponse.json();
+    }else{
+        console.log('erreur resaux');
+    }
+}
+
+const getMeudleId = async function(id){
+    let adresse = 'http://localhost:3000/api/furniture/'+ id
+    let reponse = await fetch (adresse);
+    console.log(adresse)
+    if (reponse.ok){
+        return await reponse.json();
     }else{
         console.log('erreur resaux');
     }

@@ -5,16 +5,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./style.css">
 
-        <script src="./js/panier.js" defer></script>
-        <script src="js/fecth-get.js"></script>
-        <script src="./js/testfunction.js"></script>
+        <script src="js/fecth-get.js" defer></script>
+        <script src="./js/fonctionGeneral.js" defer></script>
+        <script src="./js/panier/fonctionSpecialPanier.js" defer></script>
+        <script src="./js/panier/panier.js" defer></script>
+        <script src="./js/panier/formulaire.js" defer></script>
+        
         
         <title>orinoco</title>
     </head>
 
     <body>
         <header>
+        <a href="./index.html">
             <h1>orinoco</h1>
+        </a>
         </header>
 
         <main id="conteneur-article">
@@ -23,15 +28,15 @@
             </section>
             <section>
                 <h2>formulaire de commande</h2>
-                <form id='myForm'>
+                <form id='myForm' name='myForm'>
                     <label for="prenom">
                         prenom
                     </label>
-                    <input type="text" id="prenom" name="firstName" pattern="[A-Za-z]{4,}" required>
+                    <input type="text" id="prenom" name="firstName" pattern="[A-Za-z -]{4,}" required>
                     <label for="nom">
                         nom
                     </label>
-                    <input type="text" id="nom" name="lastName" pattern="[A-Za-z]{4,}" required>
+                    <input type="text" id="nom" name="lastName" pattern="[A-Za-z -]{4,}" required>
                     <label for="adress">
                         adresse
                     </label>
@@ -39,12 +44,12 @@
                     <label for="ville">
                         ville
                     </label>
-                    <input type="text" id="ville" name="city" pattern="[A-Za-z]{3,}" required>
+                    <input type="text" id="ville" name="city" pattern="[A-Za-z ' ']{3,}" required>
                     <label for="email">
                         adresse electronique
                     </label>
                     <input type="email" id='email' name="email" required>
-                    <input type="submit" id='envoiForm'>
+                    <input type="submit" id='envoiForm' value="Passe la commande">
                 </form>
 
             </section>
