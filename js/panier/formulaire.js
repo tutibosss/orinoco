@@ -10,11 +10,14 @@ const RecupObjetFormulaire = function(form){
             return fd
 }
 
-const TableauidCommande = function(dataPanier){
+const TableauidCommande = function(dataPanier, panier){
     produitComander = [];
-    for(i = 0; i<dataPanier.length; i++){
+    for(let i = 0; i<dataPanier.length; i++){
         let element = dataPanier[i]._id
-        produitComander.push(element)
+        console.log(panier[0].quantiter)
+        for(let a =0 ; a<panier[i].quantiter; a++){
+            produitComander.push(element)
+        }
     }
     return produitComander
 }
@@ -71,14 +74,14 @@ if(rep === true){
     let email = verifEmail(input.email.value)
     console.log(input.email.value)
     console.log(email)
-    if(prenom === true && nom === true && address === true && city === true && email === true){
-        return true
+        if(prenom === true && nom === true && address === true && city === true && email === true){
+            return true
+        }else{
+            return "veuille bien remplir les champs"
+        }
     }else{
-        return "veuille bien remplir les champs"
+        return "veuille remplir tout les champs"
     }
-}else{
-    return "veuille remplir tout les champs"
-}
 }
 
 //l'action que l'on shouter au onchange sur les inpute du form
@@ -118,6 +121,7 @@ email = ActionInpute(this, rep)
 
 //fonction final pour envoyer le fomulaire
 let form = document.getElementById("myForm");
+let panier = JSON.parse(localStorage.getItem('panier'))
 
 form.addEventListener("submit", function (event) {
     class requet {
@@ -134,9 +138,8 @@ form.addEventListener("submit", function (event) {
         let verifJS = verifFinalFormulaire("myForm")
         if(verifJS === true){
             let fd = RecupObjetFormulaire(form)
-            console.log(dataMeuble)
             
-            let produitComander = TableauidCommande(dataMeuble);
+            let produitComander = TableauidCommande(dataMeuble, panier);
 
             Post(new requet(fd,produitComander), "./remerciment.html");
         }else{
