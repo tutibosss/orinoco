@@ -1,4 +1,4 @@
-//fonction pour la recuperation des donne du formulaire pour l'envoyer au serveur
+//fonction pour la récupération des données du formulaire pour l'envoyer au serveur
 const RecupObjetFormulaire = function(form){
     let fd = {};
             new FormData(form);
@@ -21,7 +21,7 @@ const TableauidCommande = function(dataPanier, panier){
     return produitComander
 }
 
-//toute les fonction de verification js pour le formulaire
+//toutes les fonctions de vérifications js pour le formulaire
 const verifMot = function(input){
     let verif = /[\d \W]/
     if(verif.test(input.value) === true){
@@ -76,7 +76,7 @@ if(rep === true){
     }
 }
 
-//l'action que l'on voulu au onchange sur les inpute du form
+//l'action que l'on veut au onchange sur les inputs du formulaire
 const ActionInpute = function(id, rep){
     if(rep === true){        
         if(id.classList.contains("bad") === true){
@@ -87,7 +87,7 @@ const ActionInpute = function(id, rep){
     }
     }
 
-//toute les action lier au inpute
+//toutes les actions liées aux inputs
 document.getElementById('prenom').addEventListener('change',function(){
 let rep = verifMot(this)
 prenom = ActionInpute(this, rep)
@@ -110,7 +110,7 @@ email = ActionInpute(this, rep)
 })
 
 
-//fonction final pour envoyer le fomulaire
+//fonction finale pour envoyer le formulaire
 let form = document.getElementById("myForm");
 let panier = JSON.parse(localStorage.getItem('panier'))
 
@@ -132,7 +132,7 @@ form.addEventListener("submit", function (event) {
             
             let produitComander = TableauidCommande(dataMeuble, panier);
 
-            Post(new requet(fd,produitComander), "./remerciment.html");
+            Post(new requet(fd,produitComander), "./Remerciements.html");
         }else{
             alert("la double validation n'est pas correct" + verifJS)
         }

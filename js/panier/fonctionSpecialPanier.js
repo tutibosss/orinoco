@@ -1,4 +1,4 @@
-//fonction qui cree un tableau avec les reponses des requete get du panier
+//fonction qui créée un tableau avec les réponses des requêtes get du panier
 const recupDataPanier = async function(Panier){
     let tableauxPanier = []
     for(i = 0; i < Panier.length; i++){
@@ -8,7 +8,7 @@ const recupDataPanier = async function(Panier){
     return tableauxPanier
 }
 
-//fonction de creation du tableau avec son entete
+//fonction de création du tableau avec son entête
 const CreeTableauRecapComande = function(conteneur, id, arrayTitreColone,){
     let tableaux = conteneur.appendChild(document.createElement('table'))
     tableaux.setAttribute('id', id);
@@ -19,12 +19,12 @@ const CreeTableauRecapComande = function(conteneur, id, arrayTitreColone,){
     }
 }
 
-//fonction pour le calcule du prix de chaque ligne du tableau
+//fonction pour le calcul du prix de chaque ligne du tableau
 const calculePrixQuantiter = function(prix, quantiter){
     return prix*quantiter
 }
 
-//fonction pour cree le contenue de chaque ligne du body du tableau
+//fonction pour créer le contenu de chaque ligne du body du tableau
 const creeLigneContenueTableau = function(conteneur, idLigne, dataAffiche, entete){
     conteneur.appendChild(document.createElement('tr')).setAttribute('id', idLigne);
     
@@ -37,7 +37,7 @@ const creeLigneContenueTableau = function(conteneur, idLigne, dataAffiche, entet
     }
 }
 
-//fonction pour la creation du foot du tableau
+//fonction pour la création du tfoot du tableau
 CreeTfootTableaux = function(tableaux, colspan, nomClassColspan, text_a_affiche, prixAffiche){
     tableau = document.getElementById(tableaux)
     tableau.appendChild(document.createElement('tfoot')).setAttribute('id', 'tfoot');

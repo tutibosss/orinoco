@@ -1,7 +1,7 @@
-//recuperation des donne renvoiyer par le serveur
+//récuperation des données renvoyées par le serveur.
 let dataCommande = JSON.parse(localStorage.getItem('reponsePost'));
 
-// calcule du total de la commande
+//calcul du total de la commande
 let facture = []
 for(i=0; i<dataCommande.products.length; i++){
     facture.push(dataCommande.products[i].price);

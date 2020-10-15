@@ -1,21 +1,21 @@
-//recuperation des donne pour la conception de la page
+//récuperation des données pour la conception de la page
 const Panier = JSON.parse(localStorage.getItem('panier'));
 const conteneurPanier = document.getElementById('recap');
 let Facture = [];
 
-//construction du tableaux pour le recap de la commande
+//construction du tableau pour le récap de la commande
 const creePage = async function(){
 
     if(localStorage.getItem('panier') === null){
-        conteneurPanier.appendChild(document.createElement('p')).innerText = 'votre panier et vide'
+        conteneurPanier.appendChild(document.createElement('p')).innerText = 'Votre panier est vide'
     }else{
         dataMeuble = await recupDataPanier(Panier)
 
-        //creation de du tableau avec son entete
-        let Entete = ["id element", "nom", "quantiter", "prix unitaire", "total par objet"];
+        //création du tableau avec son entête
+        let Entete = ["Id élément", "Nom", "Quantité", "Prix unitaire", "Total par objet"];
         CreeTableauRecapComande(conteneurPanier,"tableaux", Entete)
         
-        //creation du contenue du tableaux
+        //création du contenu du tableau
         let tableaux = document.getElementById('tableaux').appendChild(document.createElement('tbody'))
         
         for(i = 0; i<dataMeuble.length; i++){
@@ -29,7 +29,7 @@ const creePage = async function(){
 
             creeLigneContenueTableau(tableaux, elementEnCours._id, dataLigne, Entete);
 
-            //ajout de la possibliter de suprimer chaque ligne
+            //ajout de la possibilité de supprimer chaque ligne
             let deletLigneTableaux = function(){
                 tableaux.removeChild(document.getElementById(elementEnCours._id));
                 totalFacture = totalFacture - totalLigne;
@@ -52,21 +52,21 @@ const creePage = async function(){
 
         let totalFacture = calculeFacture(Facture)
 
-        //creation du foot du tableau
-        CreeTfootTableaux ('tableaux', Entete.length-1, 'droit', 'total de la comande',  totalFacture +"€")
+        //création du tfoot du tableau
+        CreeTfootTableaux ('tableaux', Entete.length-1, 'droit', 'total de la commande',  totalFacture +"€")
 
-        // ajout du boutton pour vide totalement le panier et suprime le tableau
+        // ajout du bouton pour vider totalement le panier et suprimer le tableau
         const deletPanier = function(){
             let p = document.createElement('p')
             conteneurPanier.replaceChild(p, document.getElementById('tableaux'));
-            p.innerText = "votre panier a bien etait vide";
+            p.innerText = "Votre panier a bien été vidé";
             localStorage.removeItem('panier');
             conteneurPanier.removeChild(document.getElementById('deletPanier'));
         }
-        creeBouton(conteneurPanier,'deletPanier','vide le panier', 'click', deletPanier)
+        creeBouton(conteneurPanier,'deletPanier','Vider le panier', 'click', deletPanier)
     }
 
-creeLien(conteneurPanier, "rependreAchat", "./index.html", "reprendre les achat");
+creeLien(conteneurPanier, "rependreAchat", "./index.html", "Reprendre les achats");
 }
 
 let datameuble;

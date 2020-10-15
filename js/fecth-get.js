@@ -1,4 +1,4 @@
-//recuperation de la base de donnes des meuble
+//récupération de la base de donnés des meubles
 const getMeuble = async function(){
     let reponse = await fetch ('http://localhost:3000/api/furniture')
     if (reponse.ok){
@@ -19,7 +19,7 @@ const getMeudleId = async function(id){
 }
 
 
-//envoi de la commande au serveur et recuperation de la reponse
+//envoi de la commande au serveur et récupération de la réponse
 const Post = async function(elementPost, pageRedirection){
     let reponse = await fetch('http://localhost:3000/api/furniture/order',{
         method: "POST",

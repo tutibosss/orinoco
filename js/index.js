@@ -1,4 +1,4 @@
-//fonction pour la cration de la liste d'article
+//fonction pour la création de la liste d'article
 const creeListeArticleIndex = function(conteneur, dataListe){
     for (let i = 0; i < dataListe.length; i++){
 
@@ -17,7 +17,7 @@ const creeListeArticleIndex = function(conteneur, dataListe){
     }
 }
 
-//fonction de la creation de la page
+//fonction de la création de la page
 
 const creePageIndex = async function(){
     let dataMeuble = await getMeuble()

@@ -1,4 +1,4 @@
-//creation du contenue de la page artcle
+//création du contenu de la page article
 const articleID = localStorage.getItem('articleChoisi');
 
 const conteneur = document.getElementById('detail-article');

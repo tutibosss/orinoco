@@ -181,8 +181,13 @@ footer a{
     color: black;
 }
 
+.spe{
+    margin-left: 30px;
+    margin-bottom:20px;
+}
+
 .mention_legal{
-    font-size: 1.45em;
+    font-size: 1.2em;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -262,5 +267,14 @@ footer a{
     }
     p{
         text-align: center;
+    }
+    footer{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+    footer a {
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 }
