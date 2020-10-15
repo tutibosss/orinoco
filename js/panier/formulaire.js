@@ -84,7 +84,7 @@ if(rep === true){
     }
 }
 
-//l'action que l'on shouter au onchange sur les inpute du form
+//l'action que l'on voulu au onchange sur les inpute du form
 const ActionInpute = function(id, rep){
     if(rep === true){        
         if(id.classList.contains("bad") === true){

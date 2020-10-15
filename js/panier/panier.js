@@ -1,15 +1,16 @@
-//recuperation des donne pour la conceeption de la page
-let Panier = JSON.parse(localStorage.getItem('panier'));
-let conteneurPanier = document.getElementById('recap');
+//recuperation des donne pour la conception de la page
+const Panier = JSON.parse(localStorage.getItem('panier'));
+const conteneurPanier = document.getElementById('recap');
 let Facture = [];
 
-//construction du tableaux our le recap de la commande
+//construction du tableaux pour le recap de la commande
 const creePage = async function(){
-    dataMeuble = await recupDataPanier(Panier);
 
     if(localStorage.getItem('panier') === null){
         conteneurPanier.appendChild(document.createElement('p')).innerText = 'votre panier et vide'
     }else{
+        dataMeuble = await recupDataPanier(Panier)
+        
         //creation de du tableau avec son entete
         let Entete = ["id element", "nom", "quantiter", "prix unitaire", "total par objet"];
         CreeTableauRecapComande(conteneurPanier,"tableaux", Entete)

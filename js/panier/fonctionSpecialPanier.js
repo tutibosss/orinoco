@@ -1,4 +1,4 @@
-//fonction qui cree un tbleau avec les reponse des requete get du panier
+//fonction qui cree un tableau avec les reponses des requete get du panier
 const recupDataPanier = async function(Panier){
     let tableauxPanier = []
     for(i = 0; i < Panier.length; i++){
