@@ -27,7 +27,7 @@ const creePage = async function(){
 
             let dataLigne = [elementEnCours._id, elementEnCours.name, Panier[i].quantiter,elementEnCours.price + '€',totalLigne+'€']
 
-            creeLigneContenueTableau(tableaux, elementEnCours._id, dataLigne);
+            creeLigneContenueTableau(tableaux, elementEnCours._id, dataLigne, Entete);
 
             //ajout de la possibliter de suprimer chaque ligne
             let deletLigneTableaux = function(){

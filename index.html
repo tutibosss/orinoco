@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./style.css">
+        <script src="https://kit.fontawesome.com/84dc7f67f1.js" crossorigin="anonymous"></script>
 
         <script src="./js/fecth-get.js"defer></script>
         <script src="./js/fonctionGeneral.js" defer></script>
@@ -14,15 +15,23 @@
 
     <body>
         <header>
-            <h1>orinoco</h1>
+            <div>
+                <i class="fas fa-shopping-cart logo"></i>
+                <h1>Orinoco</h1>
+            </div>
             <nav>
-                <a href="panier.html" id = 'lienPanier'> Panier <span id='quantiterPanier'></span></a>
+                <a href="panier.html" id = 'lienPanier'><span>Panier <span id='quantiterPanier'></span></span>
+                    <i class="fas fa-cart-arrow-down fa-2x"></i>
+                </a>
             </nav>
         </header>
 
         <main id="conteneur-article">
 
         </main>
-
+        <footer class="footer">
+            <a href="./mention_legal.html" class="footer_logo">Mentions légales</a>
+            <a href="mailto:Orinoco@gmail.com" class="footer_logo">Contactez-nous</a>
+        </footer>
     </body>
 </html>

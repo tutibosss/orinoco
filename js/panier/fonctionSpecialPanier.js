@@ -25,11 +25,15 @@ const calculePrixQuantiter = function(prix, quantiter){
 }
 
 //fonction pour cree le contenue de chaque ligne du body du tableau
-const creeLigneContenueTableau = function(conteneur, idLigne, dataAffiche,){
+const creeLigneContenueTableau = function(conteneur, idLigne, dataAffiche, entete){
     conteneur.appendChild(document.createElement('tr')).setAttribute('id', idLigne);
     
     for(let i=0; i<dataAffiche.length; i++){
-        document.getElementById(idLigne).appendChild(document.createElement('td')).innerText = dataAffiche[i]
+        let element = document.getElementById(idLigne).appendChild(document.createElement('td')) 
+        element.innerText = dataAffiche[i]
+        let span = element.appendChild(document.createElement('span'))
+        span.innerText = entete[i]
+        span.classList.add("responsie")
     }
 }
 
