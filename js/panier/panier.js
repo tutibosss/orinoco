@@ -10,7 +10,7 @@ const creePage = async function(){
         conteneurPanier.appendChild(document.createElement('p')).innerText = 'votre panier et vide'
     }else{
         dataMeuble = await recupDataPanier(Panier)
-        
+
         //creation de du tableau avec son entete
         let Entete = ["id element", "nom", "quantiter", "prix unitaire", "total par objet"];
         CreeTableauRecapComande(conteneurPanier,"tableaux", Entete)
@@ -19,7 +19,6 @@ const creePage = async function(){
         let tableaux = document.getElementById('tableaux').appendChild(document.createElement('tbody'))
         
         for(i = 0; i<dataMeuble.length; i++){
-            console.log(dataMeuble[i]._id)
 
             let elementEnCours = dataMeuble[i];
             
@@ -40,7 +39,6 @@ const creePage = async function(){
                 }else{
                     document.getElementById('tbTotal').innerText = totalFacture;
                     Panier.splice(delet, delet--);
-                    console.log(Panier);
                     let update = JSON.stringify(Panier);
                     localStorage.setItem('panier', update);
                 }

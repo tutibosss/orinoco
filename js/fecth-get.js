@@ -4,18 +4,17 @@ const getMeuble = async function(){
     if (reponse.ok){
         return await reponse.json();
     }else{
-        console.log('erreur resaux');
+        alert('erreur resaux');
     }
 }
 
 const getMeudleId = async function(id){
     let adresse = 'http://localhost:3000/api/furniture/'+ id
     let reponse = await fetch (adresse);
-    console.log(adresse)
     if (reponse.ok){
         return await reponse.json();
     }else{
-        console.log('erreur resaux');
+        alert('erreur resaux');
     }
 }
 
@@ -35,6 +34,6 @@ const Post = async function(elementPost, pageRedirection){
         localStorage.setItem('reponsePost', repComande)
         location.href = pageRedirection
     }else{
-        console.log(reponse)
+        alert(reponse)
     }
 }

@@ -14,7 +14,6 @@ const TableauidCommande = function(dataPanier, panier){
     produitComander = [];
     for(let i = 0; i<dataPanier.length; i++){
         let element = dataPanier[i]._id
-        console.log(panier[0].quantiter)
         for(let a =0 ; a<panier[i].quantiter; a++){
             produitComander.push(element)
         }
@@ -56,7 +55,6 @@ return verif.test(value)
 const verifFinalFormulaire = function(contenue){
 let input = document.forms.myForm;
 let rep = true
-console.log(input.length)
 for(let i = 0; i<input.length; i++){
     if(!input[i].value){
         rep = false
@@ -64,16 +62,10 @@ for(let i = 0; i<input.length; i++){
 }
 if(rep === true){
     let prenom = verifMot(input.firstName.value);
-    console.log(prenom)
     let nom = verifMot(input.lastName.value);
-    console.log(nom)
     let address = verifAdress(input.address.value);
-    console.log(address)
     let city = verifVille(input.city.value);
-    console.log(city)
     let email = verifEmail(input.email.value)
-    console.log(input.email.value)
-    console.log(email)
         if(prenom === true && nom === true && address === true && city === true && email === true){
             return true
         }else{
@@ -114,7 +106,6 @@ vill = ActionInpute(this, rep)
 })
 document.getElementById('email').addEventListener('change',function(){
 let rep = verifEmail(this.value)
-console.log(rep)
 email = ActionInpute(this, rep)
 })
 
