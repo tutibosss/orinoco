@@ -1,4 +1,4 @@
 -intaller node.js
 -ouvrire le terminal de commande dans le dossier serveur
 -lancer la commade "npm install"
--et lancer la commande "node ./serveur.js"
+-et lancer la commande "node .\serveur.js"
